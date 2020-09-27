@@ -64,11 +64,11 @@ class GUI(QMainWindow):
 ```
 - Add Constructor
 It will initiate main window by calling superclass constuctor and setting basic parametes such as
---* WindowTitle
---* Size
---* generalLayout
---* LED Display
---* Buttons
+..* WindowTitle
+..* Size
+..* generalLayout
+..* LED Display
+..* Buttons
 
 - Define methods
 --* _createDisplayLED
