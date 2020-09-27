@@ -11,7 +11,7 @@ window = QWidget()
 window.setWindowTitle('PyQt5 App')
 window.setGeometry(100, 100, 280, 80)
 window.move(600, 15)
-helloMsg = QLabel('<h1>Hello World!</h1>', parent=window)
+helloMsg = QLabel('This is Test', parent=window)
 helloMsg.move(60, 30)
 
 window.show()
