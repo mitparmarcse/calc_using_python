@@ -1,5 +1,7 @@
 # Create a Controller class to connect the GUI and the model
 from functools import partial
+ERROR_MSG = 'ERROR'
+
 class Controller:
     """PyCalc's Controller."""
     def __init__(self, model, view):
@@ -11,15 +13,15 @@ class Controller:
 
     def _calculateResult(self):
         """Evaluate expressions."""
-        result = self._evaluate(expression=self._view.displayText())
+        result = self._evaluate(expression=self._view.getDisplayText())
         self._view.setDisplayText(result)
 
     def _buildExpression(self, sub_exp):
         """Build expression."""
-        if self._view.displayText() == ERROR_MSG:
+        if self._view.getDisplayText() == ERROR_MSG:
             self._view.clearDisplay()
 
-        expression = self._view.displayText() + sub_exp
+        expression = self._view.getDisplayText() + sub_exp
         self._view.setDisplayText(expression)
 
     def _connectSignals(self):
