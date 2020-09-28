@@ -83,7 +83,7 @@ class GUI(QMainWindow):
         self.display.setText(text)
         self.display.setFocus()
 
-    def displayText(self):
+    def getDisplayText(self):
         """Get display's text."""
         return self.display.text()
 
