@@ -43,6 +43,8 @@ class GUI(QMainWindow):
         
         # Add the display to the general layout
         self.generalLayout.addWidget(self.display)
+    
+
 
     def _createButtons(self):
         """Create the buttons."""
@@ -69,6 +71,13 @@ class GUI(QMainWindow):
                    '.': (3, 2),
                    '+': (3, 3),
                    '=': (3, 4),
+                   'cm_mm':(4,0),
+                   'mm_cm':(4,1),
+                   'm_cm':(4,2),
+                   'cm_m':(4,3),
+                   'inch_cm':(4,4),
+                   'cm_inch':(5,0),
+                   #added buttons for added functionalites
                   }
         # Create the buttons and add them to the grid layout
         for btnText, pos in buttons.items():
@@ -90,3 +99,34 @@ class GUI(QMainWindow):
     def clearDisplay(self):
         """Clear the display."""
         self.setDisplayText('')
+    
+    def mmToCm(self,expression):
+        """Convert milimetre to centimeter"""
+        result=expression/10
+        self.setDisplayText(result)
+        
+    def cmTomm(self,expression):
+        """Convert centimeter to milimetre"""
+        result=expression*10
+        self.setDisplayText(result)
+    
+    def mToCm(self,expression):
+        """Convert metre to centimeter"""
+        result=expression*100
+        self.setDisplayText(result)
+    
+    def cmToM(self):
+        """Convert centimeter to metre"""
+        result=expression*100
+        self.setDisplayText(result)
+
+        
+    def inchToCm(self):
+        """Convert inch to centimeter"""
+        result=expression*2.5
+        self.setDisplayText(result)
+    
+    def cmToInch(self):
+        """Convert centimeter to inch"""
+        result=expression/2.65
+        
